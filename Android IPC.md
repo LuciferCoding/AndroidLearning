@@ -1,8 +1,6 @@
-# 资料
-
+# 1. Android IPC  
 ---
-## 1. Android IPC
-### - [Android Binder设计与实现](https://blog.csdn.net/universus/article/details/6211589)
+## [Android Binder设计与实现](https://blog.csdn.net/universus/article/details/6211589)
 
 >传输性能： 
 
@@ -31,32 +29,3 @@ Binder框架四个角色：==Client，Server，ServiceManager和Binder驱动==�
 
 ---
 
-## 2. [View测量、布局及绘制原理](https://www.jianshu.com/p/3d2c49315d68)
-- ### 流程框架
-
-```
-graph LR
-A(performMessure)-->B(measure)
-B-->C(onMeasure)
-D(performLayout)-->E(layout)
-E-->F(onLayout)
-G(performDraw)-->H(draw)
-H-->I(onDraw)
-```
-
-* ###  Measure流程(测量控件大小)
-    调用measure()方法，进行一些逻辑处理，然后调用onMeasure()，在onMeasure()中调用setMeasuredDimension()保存宽高信息，完成测量。  
-
-    MeasureSpec是32位的int值，高2位表示测量模式(mode)，低两位表示测量值(size)。测量模式分为3类：  
-    >  UNSPECIFIED:无限制模式  
-    >  EXACTLY:精确测量模式  
-    >  AT_MOST:给定最大值。View的大小不能大于父容器的大小   
-    
-    如何确定MeasureSpec的值？  
-    
-    header 1 | header 2
-    ---|---
-    row 1 col 1 | row 1 col 2
-    row 2 col 1 | row 2 col 2
-
-    
